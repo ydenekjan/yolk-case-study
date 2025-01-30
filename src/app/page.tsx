@@ -8,7 +8,7 @@ export default function Home() {
       <header className={"w-full h-1/3 absolute -z-50"}>
         <HeaderImage />
       </header>
-      <main className={"flex w-screen h-screen pt-[33vh] justify-center"}>
+      <main className={"flex w-full h-screen pt-[33vh] justify-center"}>
         <PokemonContainer />
       </main>
     </>

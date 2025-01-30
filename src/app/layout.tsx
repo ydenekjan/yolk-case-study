@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <QueryWrapper>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen h-screen`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen h-screen overflow-x-hidden`}
         >
           {children}
         </body>
