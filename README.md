@@ -14,3 +14,4 @@
 2. Using react-query for care-free api calls management.
 3. Using TailwindCSS for easy component styling.
 4. Implemented infinite scrolling for a pleasurable user experience.
+5. When calling the pokeapi, I refrained from using the limit query as 20 is the default anyway.
