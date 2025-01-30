@@ -1,14 +1,16 @@
 "use client";
 import HeaderImage from "@/components/header/headerImage";
-import "../config/axios.ts";
+import PokemonContainer from "@/components/pokemon/container/pokemonContainer";
 
 export default function Home() {
   return (
     <>
-      <header className={"w-full h-1/3 relative"}>
+      <header className={"w-full h-1/3 absolute -z-50"}>
         <HeaderImage />
       </header>
-      <main></main>
+      <main className={"flex w-screen h-screen pt-[33vh] justify-center"}>
+        <PokemonContainer />
+      </main>
     </>
   );
 }
