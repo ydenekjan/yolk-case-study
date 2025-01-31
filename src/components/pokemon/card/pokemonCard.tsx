@@ -20,7 +20,7 @@ const PokemonCard = ({ url, name, ref }: PokemonCardProps) => {
     <div
       ref={ref}
       className={
-        "bg-secondary transition-all duration-200 hover:shadow-[0px_0px_20px_0px_rgba(255,_255,_255,_0.35)] w-52 rounded-md border border-accent dark:shadow-[0px_8px_24px_-4px_rgba(255,_255,_255,_0.1)] flex flex-col overflow-hidden z-50"
+        "bg-secondary transition-all duration-200 hover:shadow-[0px_0px_20px_0px_rgba(255,_255,_255,_0.35)] w-36 md:w-52 rounded-md border border-accent dark:shadow-[0px_8px_24px_-4px_rgba(255,_255,_255,_0.1)] flex flex-col overflow-hidden z-50"
       }
     >
       <div

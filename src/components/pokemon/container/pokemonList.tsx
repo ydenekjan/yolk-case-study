@@ -33,7 +33,7 @@ const PokemonList = ({
   }, [entry]);
 
   return (
-    <section className="flex flex-wrap justify-center gap-2 sm:gap-6 md:gap-8 w-full h-fit transition-all">
+    <section className="flex flex-wrap justify-center gap-6 md:gap-8 w-full h-fit transition-all">
       {pokemonList.map((pokemon, idx) => (
         <PokemonCard
           ref={idx === pokemonList.length - 1 ? ref : undefined}

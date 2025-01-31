@@ -23,10 +23,10 @@ const PokemonMovesModal = () => {
 
   return (
     <div
-      className={`inset-0 w-screen h-screen bg-gray-300/10 backdrop-blur-sm fixed z-50 flex justify-center items-center`}
+      className={`inset-0 w-screen h-screen bg-gray-300/10 backdrop-blur-sm fixed z-50 flex justify-center items-center p-6 md:p-12`}
     >
       <section
-        className={`w-[1440px] h-[720px] p-12 pb-4 mx-6 md:mx-12 lg:mx-24 gap-y-12 shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.15)] bg-secondary rounded-lg border-accent relative overflow-hidden flex flex-col ${!pokemon ? "justify-center" : null}`}
+        className={`max-w-[1440px] max-h-[720px] w-full h-full p-12 pb-4 lg:mx-24 gap-y-12 shadow-[0px_10px_20px_0px_rgba(0,_0,_0,_0.15)] bg-secondary rounded-lg border-accent relative overflow-hidden flex flex-col ${!pokemon ? "justify-center" : null}`}
       >
         {!!pokemon ? (
           <>

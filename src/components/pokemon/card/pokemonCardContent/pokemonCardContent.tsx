@@ -1,4 +1,4 @@
-import { PokemonMove, PokemonStat } from "@/lib/types/types";
+import { PokemonStat } from "@/lib/types/types";
 import PokemonCardStats from "@/components/pokemon/card/pokemonCardContent/pokemonCardDetail/pokemonCardStats";
 import PokemonCardMoves from "@/components/pokemon/card/pokemonCardContent/pokemonCardDetail/PokemonCardMoves";
 

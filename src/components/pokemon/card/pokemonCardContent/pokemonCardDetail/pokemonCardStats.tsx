@@ -7,7 +7,7 @@ const PokemonCardStats = ({
   stats: PokemonCardContentProps["stats"];
 }) => {
   return (
-    <div className={"grid grid-cols-3 gap-4 w-full"}>
+    <div className={"grid grid-cols-2 md:grid-cols-3 gap-4 w-full"}>
       {stats?.map((stat) => (
         <StatCircle
           key={stat.stat.name}
