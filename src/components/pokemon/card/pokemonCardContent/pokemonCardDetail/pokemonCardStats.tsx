@@ -1,3 +1,4 @@
+import StatCircle from "@/components/pokemon/card/pokemonCardContent/pokemonCardDetail/stats/statCircle";
 import { PokemonCardContentProps } from "@/components/pokemon/card/pokemonCardContent/pokemonCardContent";
 
 const PokemonCardStats = ({
@@ -6,12 +7,13 @@ const PokemonCardStats = ({
   stats: PokemonCardContentProps["stats"];
 }) => {
   return (
-    <div className={"flex flex-col gap-1 overflow-y-scroll"}>
+    <div className={"grid grid-cols-3 gap-4 w-full"}>
       {stats?.map((stat) => (
-        <div key={stat.stat.name} className={"flex justify-between gap-x-4"}>
-          <p>{stat.stat.name}</p>
-          <p>{stat.base_stat}</p>
-        </div>
+        <StatCircle
+          key={stat.stat.name}
+          name={stat.stat.name}
+          base_stat={stat?.base_stat}
+        />
       ))}
     </div>
   );

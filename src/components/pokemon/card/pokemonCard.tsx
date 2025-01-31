@@ -1,11 +1,15 @@
-import { memo, useEffect, useState } from "react";
+import { Ref, useEffect, useState } from "react";
 import axios from "axios";
 import { APIPokemon } from "@/lib/types/apiTypes";
 import { PokemonDetail } from "@/lib/types/types";
 import PokemonCardHeader from "@/components/pokemon/card/pokemonCardHeader/pokemonCardHeader";
 import PokemonCardContent from "@/components/pokemon/card/pokemonCardContent/pokemonCardContent";
 
-const PokemonCard = memo(({ url, name }: APIPokemon) => {
+interface PokemonCardProps extends APIPokemon {
+  ref: Ref<HTMLDivElement> | undefined;
+}
+
+const PokemonCard = ({ url, name, ref }: PokemonCardProps) => {
   const [pokemon, setPokemon] = useState<PokemonDetail | null>(null);
 
   useEffect(() => {
@@ -14,25 +18,24 @@ const PokemonCard = memo(({ url, name }: APIPokemon) => {
 
   return (
     <div
+      ref={ref}
       className={
-        "bg-background rounded-md outline-gray-400 outline dark:text-gray-300 dark:shadow-foreground flex flex-col w-64 overflow-hidden"
+        "bg-secondary transition-all duration-200 hover:shadow-[0px_0px_20px_0px_rgba(255,_255,_255,_0.35)] w-52 rounded-md border border-accent dark:shadow-[0px_8px_24px_-4px_rgba(255,_255,_255,_0.1)] flex flex-col overflow-hidden z-50"
       }
     >
       <div
         className={
-          "hover:-translate-y-24 transition-all w-full h-80 cursor-default rounded-md"
+          "transition-all w-full h-fit md:gap-y-2 gap-y-4 flex flex-col py-4 cursor-default rounded-md"
         }
       >
         <PokemonCardHeader
           name={name}
           spriteUrl={pokemon?.sprites.front_default}
         />
-        <PokemonCardContent moves={pokemon?.moves} stats={pokemon?.stats} />
+        <PokemonCardContent name={name} stats={pokemon?.stats} />
       </div>
     </div>
   );
-});
-
-PokemonCard.displayName = "PokemonCard";
+};
 
 export default PokemonCard;
