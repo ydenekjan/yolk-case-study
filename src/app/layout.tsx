@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import QueryWrapper from "@/utils/wrappers/queryWrapper";
+import MasterWrapper from "@/utils/wrappers/masterWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,13 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <QueryWrapper>
+      <MasterWrapper>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen h-screen overflow-x-hidden`}
         >
           {children}
         </body>
-      </QueryWrapper>
+      </MasterWrapper>
     </html>
   );
 }

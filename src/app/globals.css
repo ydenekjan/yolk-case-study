@@ -3,16 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 100%);
-  --background-hsl: 0, 0%, 100%;
-  --foreground: hsl(0, 0%, 9%);
+  --background: #fff;
+  --foreground: #202020;
+  --primary: #eaa31a;
+  --secondary: #fff;
+  --accent: #e1e1e1;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: hsl(240, 9%, 11%);
-    --background-hsl: 240, 9%, 11%;
-    --foreground: hsl(0, 0%, 74%);
+    --background: #242424;
+    --secondary: #2e2e2e;
+    --primary: #b58423;
+    --foreground: #c9c9c9;
+    --accent: #424242;
   }
 }
 

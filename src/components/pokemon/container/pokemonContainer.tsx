@@ -15,7 +15,7 @@ const PokemonContainer = () => {
   return (
     <section
       className={
-        "flex w-screen px-12 pb-12 h-fit flex-col items-center justify-center gap-y-4 max-w-[1440px]"
+        "flex w-screen mt-[12vh] px-4 lg:px-12 pb-12 h-fit flex-col items-center justify-center gap-y-4 max-w-[1440px]"
       }
     >
       {isError ? (
@@ -30,7 +30,7 @@ const PokemonContainer = () => {
 
       {isFetchingNextPage && <LoadingDots />}
 
-      {!hasNextPage && <div>You&#39;ve reached the end</div>}
+      {!hasNextPage && !isLoading && <div>You&#39;ve reached the end</div>}
     </section>
   );
 };
