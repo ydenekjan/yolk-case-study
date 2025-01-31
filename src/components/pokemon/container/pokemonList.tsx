@@ -1,11 +1,13 @@
 import PokemonCard from "@/components/pokemon/card/pokemonCard";
-import { InfiniteData, InfiniteQueryObserverResult } from "react-query";
+import { InfiniteData } from "react-query";
 import { APIPokemonOverview } from "@/lib/types/apiTypes";
 import PokemonListEmpty from "@/components/pokemon/container/pokemonListHandlers/pokemonListEmpty";
 import PokemonListError from "@/components/pokemon/container/pokemonListHandlers/pokemonListError";
 import PokemonListLoading from "@/components/pokemon/container/pokemonListHandlers/pokemonListLoading";
 import { useEffect, useMemo, useRef } from "react";
 import { useIntersection } from "@mantine/hooks";
+import PokemonMovesModal from "@/components/pokemon/modal/pokemonMovesModal";
+import { useSelectedPokemonContext } from "@/lib/context/selectedPokemonContextProvider";
 
 const PokemonList = ({
   data,
@@ -18,6 +20,8 @@ const PokemonList = ({
     return data.pages.flatMap((page) => page.results);
   }, [data]);
 
+  const { selectedPokemon } = useSelectedPokemonContext();
+
   const lastPostRef = useRef<HTMLElement>(null);
   const { ref, entry } = useIntersection({
     root: lastPostRef.current,
@@ -29,15 +33,16 @@ const PokemonList = ({
   }, [entry]);
 
   return (
-    <section className="flex flex-wrap justify-center gap-x-8 gap-y-8 w-full h-fit px-12 py-12 transition-all">
+    <section className="flex flex-wrap justify-center gap-2 sm:gap-6 md:gap-8 w-full h-fit transition-all">
       {pokemonList.map((pokemon, idx) => (
         <PokemonCard
-          ref={idx === pokemonList.length - 5 ? ref : undefined}
+          ref={idx === pokemonList.length - 1 ? ref : undefined}
           key={pokemon.url}
           name={pokemon.name}
           url={pokemon.url}
         />
       ))}
+      {selectedPokemon && <PokemonMovesModal />}
     </section>
   );
 };

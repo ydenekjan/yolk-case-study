@@ -15,3 +15,7 @@
 3. Using TailwindCSS for easy component styling.
 4. Implemented infinite scrolling for a pleasurable user experience.
 5. When calling the pokeapi, I refrained from using the limit query as 20 is the default anyway.
+6. Actually moves or abilities? Went with moves for the sake of going by the wireframe, but it feels wrong
+7. Can not implement the moves as shown in the wireframe, as there are just way too many of them.
+   Contemplated multiple approaches: expanding the cards on hover; open a detail page;
+   make the moves scrollable in the card; open a modal on click on the card - i ended up going with this one.
