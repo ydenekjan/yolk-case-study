@@ -4,6 +4,7 @@ import LoadingDots from "@/components/pokemon/loading/loadingDots";
 
 const PokemonContainer = () => {
   const {
+    refetch,
     data,
     fetchNextPage,
     isError,
@@ -12,10 +13,12 @@ const PokemonContainer = () => {
     isFetchingNextPage,
   } = usePokemonQuery();
 
+  console.log(data);
+
   return (
     <section
       className={
-        "flex w-screen mt-[12vh] px-4 lg:px-12 pb-12 h-fit flex-col items-center justify-center gap-y-4 max-w-[1440px]"
+        "flex w-screen px-4 lg:px-12 pb-12 h-fit flex-col items-center justify-center gap-y-4 max-w-[1440px]"
       }
     >
       {isError ? (
@@ -25,7 +28,7 @@ const PokemonContainer = () => {
       ) : !data ? (
         <PokemonList.Empty />
       ) : (
-        <PokemonList data={data} fetchData={fetchNextPage} />
+        <PokemonList data={data} fetchData={fetchNextPage} refetch={refetch} />
       )}
 
       {isFetchingNextPage && <LoadingDots />}

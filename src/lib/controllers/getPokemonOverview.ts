@@ -2,10 +2,12 @@ import { QueryFunctionContext, useInfiniteQuery } from "react-query";
 import axios from "axios";
 import { APIPokemonOverview } from "@/lib/types/apiTypes";
 
+export const baseUrl = "https://pokeapi.co/api/v2/pokemon";
+
 //fetches the data using either the default or the "next" property from the previous response
 const fetchPokemon = async ({ pageParam }: QueryFunctionContext) => {
   const { data } = await axios.get<APIPokemonOverview>(
-    pageParam ?? "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0",
+    pageParam ?? baseUrl + "?limit=20&offset=0",
   );
   return data;
 };
