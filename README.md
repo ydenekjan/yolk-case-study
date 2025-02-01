@@ -19,3 +19,5 @@
 7. Can not implement the moves as shown in the wireframe, as there are just way too many of them.
    Contemplated multiple approaches: expanding the cards on hover; open a detail page;
    make the moves scrollable in the card; open a modal on click on the card - i ended up going with this one.
+8. implemented a search feature - had some trouble switching between the main list and the searched pokemon,
+got it working in the end, albeit not in a very clever way.
