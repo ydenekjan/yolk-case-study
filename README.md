@@ -7,7 +7,7 @@
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see to project
 
 ### b) Using the deployed application
-1. Navigate over to [link]().
+1. Navigate over to [link](https://yolk-case-study.vercel.app/).
 
 ## Thoughts and notes
 1. Not using the [pokeapi wrapper library](https://github.com/Gabb-c/pokenode-ts) intentionally, as it kind of defeats the purpose of this assessment in my opinion.
